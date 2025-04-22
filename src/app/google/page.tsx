@@ -1,4 +1,8 @@
+import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
+
 export default function GooglePage() {
+  const { isSignedIn } = useUser();
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Header */}
@@ -6,11 +10,22 @@ export default function GooglePage() {
         <nav className="flex items-center space-x-4">
           <a href="#" className="text-gray-600 hover:underline">Gmail</a>
           <a href="#" className="text-gray-600 hover:underline">Images</a>
-          <button className="p-2 hover:bg-gray-100 rounded-full">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-            </svg>
-          </button>
+          {isSignedIn ? (
+            <UserButton afterSignOutUrl="/google" />
+          ) : (
+            <div className="flex space-x-2">
+              <SignInButton mode="modal">
+                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                  Sign In
+                </button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </div>
+          )}
         </nav>
       </header>
 
