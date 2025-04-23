@@ -1,3 +1,5 @@
+'use client'
+
 import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 
 export default function GooglePage() {
@@ -67,7 +69,7 @@ export default function GooglePage() {
             Google Search
           </button>
           <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm py-2 px-4 rounded">
-            I'm Feeling Lucky
+            I&apos;m Feeling Lucky
           </button>
         </div>
       </main>
