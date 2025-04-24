@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Structure
+
+This is a Next.js 15 application with React 19, Tailwind CSS 4, Clerk authentication, and Prisma ORM.
+
+## Key Files and Directories
+
+- [package.json](mdc:package.json): Main project configuration with dependencies and scripts
+- [prisma/schema.prisma](mdc:prisma/schema.prisma): Database schema definition using Prisma ORM
+- [src/app/layout.tsx](mdc:src/app/layout.tsx): Root layout with Clerk authentication providers
+- [src/middleware.ts](mdc:src/middleware.ts): Clerk authentication middleware
+- [src/app/google/page.tsx](mdc:src/app/google/page.tsx): Google-inspired landing page with authentication UI
+- [src/app/page.tsx](mdc:src/app/page.tsx): Main homepage
+- [src/app/globals.css](mdc:src/app/globals.css): Global styles with Tailwind imports

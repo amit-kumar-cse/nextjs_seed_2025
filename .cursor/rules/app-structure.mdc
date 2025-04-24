@@ -1,0 +1,28 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Next.js App Router Structure
+
+This project uses Next.js 15 with the App Router. Here's how the app directory is structured:
+
+## Key Files and Conventions
+
+- [src/app/layout.tsx](mdc:src/app/layout.tsx): Root layout with global UI elements
+- [src/app/page.tsx](mdc:src/app/page.tsx): Main homepage component (route: /)
+- [src/app/google/page.tsx](mdc:src/app/google/page.tsx): Google-inspired page (route: /google)
+- [src/app/globals.css](mdc:src/app/globals.css): Global styles with Tailwind
+
+## Routing
+
+- Each folder under app/ becomes a route segment
+- page.tsx files define the UI for a route
+- layout.tsx files define shared UI for child routes
+- API routes are defined in app/api/ folders with route.ts files
+
+## Styling
+
+- Tailwind CSS 4 is used for styling
+- Global styles are imported in the root layout
+- Components use utility classes for styling

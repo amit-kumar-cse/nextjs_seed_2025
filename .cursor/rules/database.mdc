@@ -1,0 +1,32 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Database with Prisma
+
+This project uses Prisma ORM with PostgreSQL. Here's how it's set up:
+
+## Key Files
+
+- [prisma/schema.prisma](mdc:prisma/schema.prisma): Defines the database schema and models
+- [package.json](mdc:package.json): Contains Prisma-related scripts like "prisma:generate"
+
+## User Model
+
+The schema includes a User model with:
+- id (auto-incremented integer)
+- email (unique string)
+- name (optional string)
+- createdAt/updatedAt timestamps
+
+## Setup Process
+
+1. Define your schema in schema.prisma
+2. Run `npm run prisma:generate` to generate the Prisma client
+3. Set DATABASE_URL in .env.local to connect to your PostgreSQL database
+4. Use the PrismaClient to query your database
+
+## Build Integration
+
+The prebuild script automatically runs prisma:generate before building the application to ensure the Prisma client is up-to-date.

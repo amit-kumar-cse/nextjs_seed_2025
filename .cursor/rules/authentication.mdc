@@ -1,0 +1,29 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Authentication with Clerk
+
+This project uses Clerk for authentication. Here's how it's set up:
+
+## Key Components
+
+- [src/middleware.ts](mdc:src/middleware.ts): Defines protected and public routes
+- [src/app/layout.tsx](mdc:src/app/layout.tsx): Contains the ClerkProvider and authentication UI components
+
+## Authentication Flow
+
+1. The ClerkProvider wraps the entire application to provide auth context
+2. The middleware protects routes except those specified in publicRoutes
+3. SignedIn/SignedOut components conditionally render based on auth state
+4. SignInButton/SignUpButton components handle the login/signup process
+5. UserButton displays the authenticated user's information
+
+## Environment Variables
+
+Remember to set up your .env.local file with:
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
+CLERK_SECRET_KEY=your_secret_key
+```
